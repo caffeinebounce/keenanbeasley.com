@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Footer as SharedFooter, SocialIcon } from "@caffeinebounce/ui";
 
 export default function Footer() {
@@ -8,33 +9,45 @@ export default function Footer() {
     <SharedFooter
       variant="brand"
       logo={
-        <Image
-          src="/images/logo-orange.png"
-          alt="Keenan Beasley"
-          width={100}
-          height={33}
-        />
+        <Link href="/" aria-label="Keenan Beasley home" className="block">
+          <Image
+            src="/images/logo-orange.png"
+            alt="Keenan Beasley"
+            width={124}
+            height={40}
+          />
+        </Link>
       }
-      tagline="Founder. Builder. Operator."
+      className="border-white/10 bg-black/70"
+      tagline="Founder, builder, and operator focused on turning culture, attention, and influence into durable ownership."
       linkGroups={[
         {
-          title: "Platform",
+          title: "Explore",
           links: [
+            { label: "About", href: "/about" },
             { label: "Factory", href: "/factory" },
             { label: "Portfolio", href: "/portfolio" },
           ],
         },
         {
-          title: "Connect",
+          title: "Presence",
           links: [
+            { label: "Media", href: "/media" },
             { label: "Speaking", href: "/speaking" },
             { label: "Contact", href: "/contact" },
-            { label: "Media", href: "/media" },
           ],
         },
       ]}
       copyright={`© ${new Date().getFullYear()} Keenan Beasley. All rights reserved.`}
-      containerClassName="max-w-6xl px-6"
+      containerClassName="max-w-6xl px-6 md:px-8"
+      bottomContent={
+        <a
+          href="mailto:contact@keenanbeasley.com"
+          className="text-sm text-white/55 hover:text-white"
+        >
+          contact@keenanbeasley.com
+        </a>
+      }
       socialLinks={[
         {
           icon: <SocialIcon platform="instagram" size={20} />,

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Section, Container } from "@caffeinebounce/ui";
+import Link from "next/link";
+import { Button, Section, Container } from "@caffeinebounce/ui";
 import { Timeline } from "@caffeinebounce/ui/marketing";
 
 const timelineItems = [
@@ -12,15 +13,15 @@ const timelineItems = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-black pt-28 text-white">
+    <div className="site-page">
       <Section spacing="lg">
-        <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr,1fr]">
-          <div className="space-y-6">
+        <Container className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="order-2 space-y-6 md:order-1">
             <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">About</p>
             <h1 className="text-5xl leading-tight md:text-6xl">Keenan Beasley</h1>
             <p className="text-lg text-white/75">
               Founder, operator, and builder focused on converting cultural
-              leverage into durable ownership. Keenan's work lives at the
+              leverage into durable ownership. Keenan&apos;s work lives at the
               intersection of media, influence, and capital formation.
             </p>
             <p className="text-white/70">
@@ -28,9 +29,23 @@ export default function AboutPage() {
               and a track record of building ventures rooted in culture, he
               created Factory to architect the next era of founder-led wealth.
             </p>
+            <div className="site-card-static p-5">
+              <p className="site-kicker">Operating Focus</p>
+              <p className="mt-3 text-base leading-relaxed text-white/74">
+                Brand strategy, cultural economics, media leverage, and the
+                systems required to turn visibility into durable ownership.
+              </p>
+            </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-white/10">
-            <Image src="/images/headshot.jpg" alt="Keenan Beasley" width={900} height={1200} className="h-full w-full object-cover" />
+          <div className="order-1 site-card-static overflow-hidden md:order-2">
+            <Image
+              src="/images/hero-1.webp"
+              alt="Keenan Beasley smiling"
+              width={1400}
+              height={1200}
+              className="aspect-[5/4] h-full w-full object-cover object-[65%_center]"
+              priority
+            />
           </div>
         </Container>
       </Section>
@@ -42,8 +57,8 @@ export default function AboutPage() {
           <div className="space-y-6 text-lg leading-relaxed text-white/75">
             <p>
               We are living through one of the most important economic shifts of
-              our lifetime. Culture is no longer a byproduct of commerce — it is
-              the engine of commerce. Attention has become the world's most
+              our lifetime. Culture is no longer a byproduct of commerce; it is
+              the engine of commerce. Attention has become the world&apos;s most
               valuable asset, and influence now sits upstream from nearly every
               purchasing, investing, and growth decision.
             </p>
@@ -85,9 +100,16 @@ export default function AboutPage() {
       </Section>
 
       <Section spacing="lg" className="bg-[#0a0a0a]">
-        <Container className="grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:items-center">
-          <div className="overflow-hidden rounded-2xl border border-white/10">
-            <Image src="/images/speaking.jpg" alt="Keenan speaking" width={1200} height={900} className="h-full w-full object-cover" />
+        <Container className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="site-card-static overflow-hidden">
+            <Image
+              src="/images/speaking.jpg"
+              alt="Keenan speaking"
+              width={1200}
+              height={900}
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
           </div>
           <div className="space-y-5">
             <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">In Conversation</p>
@@ -97,6 +119,13 @@ export default function AboutPage() {
               brand strategy, and the operating frameworks required to convert
               momentum into multi-generational value.
             </p>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium uppercase tracking-[0.14em] text-white hover:border-[#FF4628]/60 hover:bg-[#FF4628]/10"
+            >
+              <Link href="/speaking">Explore Speaking</Link>
+            </Button>
           </div>
         </Container>
       </Section>
