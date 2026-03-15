@@ -41,7 +41,7 @@ const companies = [
 
 export default function PortfolioPage() {
   return (
-    <div className="bg-black pt-28 text-white">
+    <div className="site-page">
       <Section spacing="lg">
         <Container className="max-w-5xl space-y-6">
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Portfolio</p>
@@ -54,11 +54,11 @@ export default function PortfolioPage() {
       </Section>
 
       <Section spacing="lg" className="bg-[#111111]">
-        <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Container className="grid gap-6 md:grid-cols-3">
           {companies.map((company) => (
-            <Card key={company.name} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
+            <Card key={company.name} className="site-card">
               <CardContent className="p-8">
-                <p className="mb-4 inline-flex rounded-full border border-[#FF4628]/40 bg-[#FF4628]/10 px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#FF4628]">
+                <p className="mb-4 inline-flex rounded-md border border-[#FF4628]/40 bg-[#FF4628]/10 px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#FF4628]">
                   {company.status}
                 </p>
                 <h2 className="text-3xl">{company.name}</h2>

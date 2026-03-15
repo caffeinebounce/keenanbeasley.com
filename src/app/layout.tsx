@@ -30,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body
-        className={`${inter.variable} ${playfair.variable} bg-[#000000] text-white antialiased`}
-      >
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

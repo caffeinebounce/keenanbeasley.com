@@ -3,7 +3,7 @@ import { Section, Container, Card, CardContent, SocialIcon } from "@caffeineboun
 
 export default function ContactPage() {
   return (
-    <div className="bg-black pt-28 text-white">
+    <div className="site-page">
       <Section spacing="lg">
         <Container className="max-w-4xl text-center">
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Contact</p>
@@ -13,16 +13,23 @@ export default function ContactPage() {
             media opportunities, reach out directly.
           </p>
 
-          <Card className="mt-12 bg-white/5 border-white/10">
-            <CardContent className="p-8 md:p-10">
+          <Card className="site-card mt-12">
+            <CardContent className="p-6 md:p-10">
               <p className="text-sm uppercase tracking-[0.14em] text-white/60">Email</p>
-              <a href="mailto:contact@keenanbeasley.com" className="mt-3 inline-block text-2xl text-[#FF4628] hover:underline">
+              <a
+                href="mailto:contact@keenanbeasley.com"
+                className="mx-auto mt-3 block max-w-[15ch] break-all text-[clamp(1.35rem,6vw,2rem)] leading-tight text-[#FF4628] hover:underline"
+              >
                 contact@keenanbeasley.com
               </a>
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/58">
+                Best for speaking inquiries, advisory requests, strategic
+                partnerships, and media opportunities.
+              </p>
 
               <div className="mt-8">
                 <p className="text-sm uppercase tracking-[0.14em] text-white/60">Social</p>
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                   <Link href="https://instagram.com/keenanbeasley" className="flex items-center gap-2 text-sm uppercase tracking-[0.12em] text-white/80 hover:text-[#FF4628]">
                     <SocialIcon platform="instagram" size={18} />
                     Instagram

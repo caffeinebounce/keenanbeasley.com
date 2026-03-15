@@ -9,8 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@caffeinebounce/shared-utils": "^0.7.42",
-    "@caffeinebounce/ui": "^0.52.39",
+    "@caffeinebounce/shared-utils": "^0.7.43",
+    "@caffeinebounce/ui": "^0.53.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
