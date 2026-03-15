@@ -2,35 +2,62 @@
 
 @source "../../../node_modules/@caffeinebounce/ui/dist";
 
-:root {
-  --background: #000000;
-  --background-elevated: #111111;
-  --background-surface: #1a1a1a;
-  --foreground: #ffffff;
-  --muted: #999999;
-  --factory-orange: #ff4628;
-  --factory-orange-muted: #d9563f;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-background-elevated: var(--background-elevated);
-  --color-background-surface: var(--background-surface);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-factory-orange: var(--factory-orange);
-  --color-factory-orange-muted: var(--factory-orange-muted);
+  /* Core */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
+  /* Card */
+  --color-card: #111111;
+  --color-card-foreground: #ffffff;
+
+  /* Popover */
+  --color-popover: #111111;
+  --color-popover-foreground: #ffffff;
+
+  /* Primary = Factory Orange */
+  --color-primary: #ff4628;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary */
+  --color-secondary: #1a1a1a;
+  --color-secondary-foreground: #ffffff;
+
+  /* Muted */
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #999999;
+
+  /* Accent */
+  --color-accent: #1a1a1a;
+  --color-accent-foreground: #ffffff;
+
+  /* Destructive */
+  --color-destructive: #dc2626;
+
+  /* Border / Input / Ring */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.15);
+  --color-ring: #ff4628;
+
+  /* Custom */
+  --color-factory-orange: #ff4628;
+  --color-factory-orange-muted: #d9563f;
+
+  /* Typography */
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+
+  /* Radius */
+  --radius: 0.75rem;
 }
 
 * {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-border);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-inter), sans-serif;
 }
 
