@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import "@caffeinebounce/ui/styles.css";
 
-@source "../../../node_modules/@caffeinebounce/ui/dist";
+@source "../../../node_modules/@caffeinebounce/ui/dist/**/*.mjs";
+@source "../../../node_modules/@caffeinebounce/ui/dist/**/*.js";
 
 @theme inline {
   /* Core */
