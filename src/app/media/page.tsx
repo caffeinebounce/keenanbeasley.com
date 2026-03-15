@@ -56,7 +56,7 @@ export default function MediaPage() {
       <Section spacing="lg" className="bg-[#111111]">
         <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {mediaAppearances.map((item) => (
-            <Card key={item.title} className="bg-white/5 border-white/10">
+            <Card key={item.title} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
               <CardContent className="p-7">
                 <p className="text-xs uppercase tracking-[0.14em] text-[#FF4628]">{item.type}</p>
                 <h2 className="mt-3 text-2xl">{item.title}</h2>
@@ -72,7 +72,7 @@ export default function MediaPage() {
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Articles & Essays</p>
           <div className="space-y-4">
             {articles.map((title) => (
-              <Card key={title} className="bg-white/5 border-white/10">
+              <Card key={title} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
                 <CardContent className="p-6">
                   <h3 className="text-2xl">{title}</h3>
                 </CardContent>

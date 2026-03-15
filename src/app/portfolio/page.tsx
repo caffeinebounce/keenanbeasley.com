@@ -56,7 +56,7 @@ export default function PortfolioPage() {
       <Section spacing="lg" className="bg-[#111111]">
         <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {companies.map((company) => (
-            <Card key={company.name} className="bg-white/5 border-white/10">
+            <Card key={company.name} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
               <CardContent className="p-8">
                 <p className="mb-4 inline-flex rounded-full border border-[#FF4628]/40 bg-[#FF4628]/10 px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#FF4628]">
                   {company.status}

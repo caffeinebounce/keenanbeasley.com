@@ -28,7 +28,9 @@ export default function Navbar() {
       links={navLinks}
       sticky
       hideOnScrollDown
-      variant="transparent"
+      variant="blur"
+      showMobileMenu
+      containerClassName="max-w-6xl px-6"
       LinkComponent={Link}
     />
   );

@@ -74,7 +74,7 @@ export default function FactoryPage() {
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">The Platform Model</p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {divisions.map((division) => (
-              <Card key={division.title} className="bg-white/5 border-white/10">
+              <Card key={division.title} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
                 <CardContent className="p-8">
                   <h3 className="text-3xl">{division.title}</h3>
                   <p className="mt-4 text-white/75">{division.detail}</p>

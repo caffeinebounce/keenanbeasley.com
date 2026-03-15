@@ -16,7 +16,25 @@ export default function Footer() {
         />
       }
       tagline="Founder. Builder. Operator."
-      copyright="© 2025 Keenan Beasley. All rights reserved."
+      linkGroups={[
+        {
+          title: "Platform",
+          links: [
+            { label: "Factory", href: "/factory" },
+            { label: "Portfolio", href: "/portfolio" },
+          ],
+        },
+        {
+          title: "Connect",
+          links: [
+            { label: "Speaking", href: "/speaking" },
+            { label: "Contact", href: "/contact" },
+            { label: "Media", href: "/media" },
+          ],
+        },
+      ]}
+      copyright={`© ${new Date().getFullYear()} Keenan Beasley. All rights reserved.`}
+      containerClassName="max-w-6xl px-6"
       socialLinks={[
         {
           icon: <SocialIcon platform="instagram" size={20} />,

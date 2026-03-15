@@ -41,7 +41,7 @@ export default function SpeakingPage() {
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Speaking Topics</p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {topics.map((topic) => (
-              <Card key={topic} className="bg-white/5 border-white/10">
+              <Card key={topic} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
                 <CardContent className="p-6">
                   <h2 className="text-2xl">{topic}</h2>
                 </CardContent>
@@ -57,7 +57,7 @@ export default function SpeakingPage() {
             <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Past Engagements</p>
             <div className="space-y-3 text-lg text-white/75">
               {engagements.map((item) => (
-                <Card key={item} className="bg-white/5 border-white/10">
+                <Card key={item} className="bg-white/[0.04] border-white/10 hover:bg-white/[0.08] transition-colors duration-300">
                   <CardContent className="p-4">{item}</CardContent>
                 </Card>
               ))}
