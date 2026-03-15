@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Section, Container, Card, CardContent, Button } from "@caffeinebounce/ui";
+import { StepFlow, Timeline, QuoteBlock, LogoGrid } from "@caffeinebounce/ui/marketing";
 
 const divisions = [
   {
@@ -32,17 +34,18 @@ const ventures = [
   ["Venture Noire", "Investment and venture pipeline for emerging founders"],
 ];
 
-const timeline = [
-  ["West Point", "United States Military Academy"],
-  ["Procter & Gamble", "Brand Management"],
-  ["Reckitt Benckiser", "Marketing Leadership"],
-  ["L'Oréal", "Executive Marketing"],
-  ["Founder & Entrepreneur", "Factory Platform"],
+const timelineItems = [
+  { title: "West Point", subtitle: "United States Military Academy" },
+  { title: "Procter & Gamble", subtitle: "Brand Management" },
+  { title: "Reckitt Benckiser", subtitle: "Marketing Leadership" },
+  { title: "L'Oréal", subtitle: "Executive Marketing" },
+  { title: "Founder & Entrepreneur", subtitle: "Factory Platform" },
 ];
 
 export default function Home() {
   return (
     <div className="bg-black text-white">
+      {/* Hero — custom, no shared component needed */}
       <section
         className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
         style={{
@@ -52,7 +55,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div className="container-width text-center">
+        <Container className="text-center">
           <p className="mb-4 text-sm uppercase tracking-[0.2em] text-white/80">
             Founder of Factory
           </p>
@@ -64,33 +67,25 @@ export default function Home() {
             creators.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/factory"
-              className="rounded-full bg-[#FF4628] px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:bg-[#D9563F]"
-            >
-              Explore Factory
-            </Link>
-            <Link
-              href="/portfolio"
-              className="rounded-full border border-white/25 px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:border-[#FF4628] hover:text-[#FF4628]"
-            >
-              View Portfolio
-            </Link>
-            <Link
-              href="/media"
-              className="rounded-full border border-white/25 px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition hover:border-[#FF4628] hover:text-[#FF4628]"
-            >
-              Media
-            </Link>
+            <Button asChild className="rounded-full bg-[#FF4628] px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] hover:bg-[#D9563F]">
+              <Link href="/factory">Explore Factory</Link>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full border-white/25 px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] hover:border-[#FF4628] hover:text-[#FF4628]">
+              <Link href="/portfolio">View Portfolio</Link>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full border-white/25 px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] hover:border-[#FF4628] hover:text-[#FF4628]">
+              <Link href="/media">Media</Link>
+            </Button>
           </div>
           <div className="mt-16 text-sm uppercase tracking-[0.2em] text-white/55">
             ↓ Scroll
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="section-padding">
-        <div className="container-width space-y-12">
+      {/* Factory Platform */}
+      <Section spacing="lg">
+        <Container className="space-y-12">
           <div className="space-y-5">
             <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">
               The Factory Platform
@@ -102,42 +97,35 @@ export default function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {divisions.map((item) => (
-              <article key={item.title} className="card-surface p-7">
-                <h3 className="text-2xl">{item.title}</h3>
-                <p className="mt-3 text-white/70">{item.description}</p>
-              </article>
+              <Card key={item.title} className="bg-white/5 border-white/10">
+                <CardContent className="p-7">
+                  <h3 className="text-2xl">{item.title}</h3>
+                  <p className="mt-3 text-white/70">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding bg-[#111111]">
-        <div className="container-width">
+      {/* Flywheel */}
+      <Section spacing="lg" className="bg-[#111111]">
+        <Container>
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">
             Platform Flywheel
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-4">
-            {[
-              "Culture",
-              "Attention",
-              "Capital",
-              "Ownership",
-            ].map((step, i) => (
-              <div key={step} className="relative card-surface p-8 text-center">
-                <p className="text-2xl">{step}</p>
-                {i < 3 ? (
-                  <span className="absolute right-[-18px] top-1/2 hidden -translate-y-1/2 text-3xl text-[#FF4628] md:block">
-                    →
-                  </span>
-                ) : null}
-              </div>
-            ))}
+          <div className="mt-10">
+            <StepFlow
+              steps={["Culture", "Attention", "Capital", "Ownership"]}
+              arrowClassName="text-[#FF4628]"
+            />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding">
-        <div className="container-width">
+      {/* Portfolio & Ventures */}
+      <Section spacing="lg">
+        <Container>
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
               <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">
@@ -151,67 +139,60 @@ export default function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {ventures.map(([name, tagline]) => (
-              <article key={name} className="card-surface p-7">
-                <h3 className="text-2xl">{name}</h3>
-                <p className="mt-3 text-white/70">{tagline}</p>
-              </article>
+              <Card key={name} className="bg-white/5 border-white/10">
+                <CardContent className="p-7">
+                  <h3 className="text-2xl">{name}</h3>
+                  <p className="mt-3 text-white/70">{tagline}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding bg-[#111111]">
-        <div className="container-width">
+      {/* Timeline */}
+      <Section spacing="lg" className="bg-[#111111]">
+        <Container>
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">
             Experience Timeline
           </p>
-          <div className="mt-12 space-y-8 border-l border-white/10 pl-8">
-            {timeline.map(([title, subtitle]) => (
-              <div key={title} className="relative">
-                <span className="absolute -left-[38px] top-1.5 h-3 w-3 rounded-full bg-[#FF4628]" />
-                <h3 className="text-2xl">{title}</h3>
-                <p className="text-white/70">{subtitle}</p>
-              </div>
-            ))}
+          <div className="mt-12">
+            <Timeline items={timelineItems} dotClassName="bg-[#FF4628]" />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding">
-        <div className="container-width space-y-10">
+      {/* As Seen In */}
+      <Section spacing="lg">
+        <Container className="space-y-10">
           <div className="flex items-end justify-between gap-4">
             <h2 className="text-4xl md:text-5xl">As Seen In</h2>
             <Link href="/media" className="text-sm uppercase tracking-[0.14em] text-white/70 hover:text-[#FF4628]">
               Visit Media →
             </Link>
           </div>
-          <div className="grid gap-4 text-center text-white/60 md:grid-cols-4">
-            {[
-              "Forbes",
-              "Fast Company",
-              "Adweek",
-              "The Breakfast Club",
-            ].map((outlet) => (
-              <div key={outlet} className="card-surface py-8 text-lg">
-                {outlet}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <LogoGrid
+            items={[
+              { name: "Forbes" },
+              { name: "Fast Company" },
+              { name: "Adweek" },
+              { name: "The Breakfast Club" },
+            ]}
+            columns={4}
+          />
+        </Container>
+      </Section>
 
-      <section className="section-padding bg-[#0a0a0a]">
-        <div className="container-width max-w-4xl text-center">
-          <div className="mx-auto mb-8 h-px w-24 bg-[#FF4628]" />
-          <blockquote className="text-3xl leading-relaxed md:text-5xl">
-            “The next era of wealth will be created at the intersection of
-            culture, media, technology, and capital.”
-          </blockquote>
-          <p className="mt-8 text-sm uppercase tracking-[0.18em] text-white/70">
-            — Keenan Beasley
-          </p>
-        </div>
-      </section>
+      {/* Quote */}
+      <Section spacing="lg" className="bg-[#0a0a0a]">
+        <Container className="max-w-4xl">
+          <QuoteBlock
+            quote="The next era of wealth will be created at the intersection of culture, media, technology, and capital."
+            attribution="— Keenan Beasley"
+            accentClassName="bg-[#FF4628]"
+          />
+        </Container>
+      </Section>
     </div>
   );
 }

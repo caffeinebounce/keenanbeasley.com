@@ -1,33 +1,39 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Footer as SharedFooter, SocialIcon } from "@caffeinebounce/ui";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0a0a0a]">
-      <div className="container-width flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-4">
-          <Image
-            src="/images/logo-orange.png"
-            alt="Keenan Beasley"
-            width={120}
-            height={40}
-          />
-          <p className="text-sm text-white/60">
-            © 2025 Keenan Beasley. All rights reserved.
-          </p>
-        </div>
-        <div className="flex gap-6 text-sm uppercase tracking-[0.12em] text-white/70">
-          <Link href="https://instagram.com" className="transition hover:text-[#FF4628]">
-            Instagram
-          </Link>
-          <Link href="https://linkedin.com" className="transition hover:text-[#FF4628]">
-            LinkedIn
-          </Link>
-          <Link href="https://x.com" className="transition hover:text-[#FF4628]">
-            Twitter/X
-          </Link>
-        </div>
-      </div>
-    </footer>
+    <SharedFooter
+      variant="brand"
+      logo={
+        <Image
+          src="/images/logo-orange.png"
+          alt="Keenan Beasley"
+          width={100}
+          height={33}
+        />
+      }
+      tagline="Founder. Builder. Operator."
+      copyright="© 2025 Keenan Beasley. All rights reserved."
+      socialLinks={[
+        {
+          icon: <SocialIcon platform="instagram" size={20} />,
+          href: "https://instagram.com/keenanbeasley",
+          label: "Instagram",
+        },
+        {
+          icon: <SocialIcon platform="linkedin" size={20} />,
+          href: "https://linkedin.com/in/keenanbeasley",
+          label: "LinkedIn",
+        },
+        {
+          icon: <SocialIcon platform="x" size={20} />,
+          href: "https://x.com/keenanbeasley",
+          label: "X",
+        },
+      ]}
+    />
   );
 }

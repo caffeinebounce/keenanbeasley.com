@@ -1,24 +1,26 @@
 import Image from "next/image";
+import { Section, Container } from "@caffeinebounce/ui";
+import { Timeline } from "@caffeinebounce/ui/marketing";
 
-const timeline = [
-  ["West Point", "United States Military Academy"],
-  ["Procter & Gamble", "Brand Management"],
-  ["Reckitt Benckiser", "Marketing Leadership"],
-  ["L'Oréal", "Executive Marketing"],
-  ["Founder & Entrepreneur", "Factory Platform"],
+const timelineItems = [
+  { title: "West Point", subtitle: "United States Military Academy" },
+  { title: "Procter & Gamble", subtitle: "Brand Management" },
+  { title: "Reckitt Benckiser", subtitle: "Marketing Leadership" },
+  { title: "L'Oréal", subtitle: "Executive Marketing" },
+  { title: "Founder & Entrepreneur", subtitle: "Factory Platform" },
 ];
 
 export default function AboutPage() {
   return (
     <div className="bg-black pt-28 text-white">
-      <section className="section-padding">
-        <div className="container-width grid items-center gap-10 lg:grid-cols-[1.1fr,1fr]">
+      <Section spacing="lg">
+        <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr,1fr]">
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">About</p>
             <h1 className="text-5xl leading-tight md:text-6xl">Keenan Beasley</h1>
             <p className="text-lg text-white/75">
               Founder, operator, and builder focused on converting cultural
-              leverage into durable ownership. Keenan’s work lives at the
+              leverage into durable ownership. Keenan's work lives at the
               intersection of media, influence, and capital formation.
             </p>
             <p className="text-white/70">
@@ -30,18 +32,18 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-2xl border border-white/10">
             <Image src="/images/headshot.jpg" alt="Keenan Beasley" width={900} height={1200} className="h-full w-full object-cover" />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding bg-[#111111]">
-        <div className="container-width max-w-4xl space-y-8">
+      <Section spacing="lg" className="bg-[#111111]">
+        <Container className="max-w-4xl space-y-8">
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Founder Letter</p>
           <h2 className="text-4xl md:text-5xl">Why Factory Exists</h2>
           <div className="space-y-6 text-lg leading-relaxed text-white/75">
             <p>
               We are living through one of the most important economic shifts of
               our lifetime. Culture is no longer a byproduct of commerce — it is
-              the engine of commerce. Attention has become the world’s most
+              the engine of commerce. Attention has become the world's most
               valuable asset, and influence now sits upstream from nearly every
               purchasing, investing, and growth decision.
             </p>
@@ -70,26 +72,20 @@ export default function AboutPage() {
             </p>
             <p className="text-white">— Keenan Beasley</p>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding">
-        <div className="container-width">
+      <Section spacing="lg">
+        <Container>
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Career Timeline</p>
-          <div className="mt-12 space-y-8 border-l border-white/10 pl-8">
-            {timeline.map(([title, subtitle]) => (
-              <div key={title} className="relative">
-                <span className="absolute -left-[38px] top-1.5 h-3 w-3 rounded-full bg-[#FF4628]" />
-                <h3 className="text-2xl">{title}</h3>
-                <p className="text-white/70">{subtitle}</p>
-              </div>
-            ))}
+          <div className="mt-12">
+            <Timeline items={timelineItems} dotClassName="bg-[#FF4628]" />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section-padding bg-[#0a0a0a]">
-        <div className="container-width grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:items-center">
+      <Section spacing="lg" className="bg-[#0a0a0a]">
+        <Container className="grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-white/10">
             <Image src="/images/speaking.jpg" alt="Keenan speaking" width={1200} height={900} className="h-full w-full object-cover" />
           </div>
@@ -102,8 +98,8 @@ export default function AboutPage() {
               momentum into multi-generational value.
             </p>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </div>
   );
 }
