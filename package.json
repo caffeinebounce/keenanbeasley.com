@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@caffeinebounce/shared-utils": "^0.7.43",
-    "@caffeinebounce/ui": "^0.53.0",
+    "@caffeinebounce/ui": "^0.54.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
