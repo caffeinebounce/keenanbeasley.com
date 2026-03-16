@@ -18,9 +18,6 @@ export const metadata: Metadata = {
   title: "Keenan Beasley — Founder of Factory",
   description:
     "Building the infrastructure for the next generation of wealth creators.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({

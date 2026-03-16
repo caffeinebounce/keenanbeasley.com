@@ -2,14 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button, Section, Container } from "@caffeinebounce/ui";
 import { Timeline } from "@caffeinebounce/ui/marketing";
-
-const timelineItems = [
-  { title: "West Point", subtitle: "United States Military Academy" },
-  { title: "Procter & Gamble", subtitle: "Brand Management" },
-  { title: "Reckitt Benckiser", subtitle: "Marketing Leadership" },
-  { title: "L'Oréal", subtitle: "Executive Marketing" },
-  { title: "Founder & Entrepreneur", subtitle: "Factory Platform" },
-];
+import { aboutTimelineItems } from "@/lib/career-history";
+import { AboutPortraitPixelated } from "@/components/AboutPortraitPixelated";
 
 export default function AboutPage() {
   return (
@@ -37,15 +31,10 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="order-1 site-card-static overflow-hidden md:order-2">
-            <Image
-              src="/images/hero-1.webp"
-              alt="Keenan Beasley smiling"
-              width={1400}
-              height={1200}
-              className="aspect-[5/4] h-full w-full object-cover object-[65%_center]"
-              priority
-            />
+          <div className="order-1 md:order-2 md:pl-4">
+            <div className="site-card-static overflow-hidden p-0">
+              <AboutPortraitPixelated />
+            </div>
           </div>
         </Container>
       </Section>
@@ -94,7 +83,7 @@ export default function AboutPage() {
         <Container>
           <p className="text-sm uppercase tracking-[0.18em] text-[#FF4628]">Career Timeline</p>
           <div className="mt-12">
-            <Timeline items={timelineItems} dotClassName="bg-[#FF4628]" />
+            <Timeline items={aboutTimelineItems} dotClassName="bg-[#FF4628]" />
           </div>
         </Container>
       </Section>
@@ -122,7 +111,7 @@ export default function AboutPage() {
             <Button
               asChild
               variant="outline"
-              className="border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium uppercase tracking-[0.14em] text-white hover:border-[#FF4628]/60 hover:bg-[#FF4628]/10"
+              size="lg"
             >
               <Link href="/speaking">Explore Speaking</Link>
             </Button>

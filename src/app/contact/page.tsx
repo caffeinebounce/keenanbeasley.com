@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Section, Container, Card, CardContent, SocialIcon } from "@caffeinebounce/ui";
 
 export default function ContactPage() {
@@ -17,10 +16,10 @@ export default function ContactPage() {
             <CardContent className="p-6 md:p-10">
               <p className="text-sm uppercase tracking-[0.14em] text-white/60">Email</p>
               <a
-                href="mailto:contact@keenanbeasley.com"
-                className="mx-auto mt-3 block max-w-[15ch] break-all text-[clamp(1.35rem,6vw,2rem)] leading-tight text-[#FF4628] hover:underline"
+                href="mailto:info@keenanbeasley.com"
+                className="mx-auto mt-3 block w-fit whitespace-nowrap text-[clamp(1.35rem,6vw,2rem)] leading-tight text-[#FF4628] hover:underline"
               >
-                contact@keenanbeasley.com
+                info@keenanbeasley.com
               </a>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/58">
                 Best for speaking inquiries, advisory requests, strategic
@@ -29,19 +28,43 @@ export default function ContactPage() {
 
               <div className="mt-8">
                 <p className="text-sm uppercase tracking-[0.14em] text-white/60">Social</p>
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-                  <Link href="https://instagram.com/keenanbeasley" className="flex items-center gap-2 text-sm uppercase tracking-[0.12em] text-white/80 hover:text-[#FF4628]">
-                    <SocialIcon platform="instagram" size={18} />
-                    Instagram
-                  </Link>
-                  <Link href="https://linkedin.com/in/keenanbeasley" className="flex items-center gap-2 text-sm uppercase tracking-[0.12em] text-white/80 hover:text-[#FF4628]">
-                    <SocialIcon platform="linkedin" size={18} />
-                    LinkedIn
-                  </Link>
-                  <Link href="https://x.com/keenanbeasley" className="flex items-center gap-2 text-sm uppercase tracking-[0.12em] text-white/80 hover:text-[#FF4628]">
-                    <SocialIcon platform="x" size={18} />
-                    Twitter / X
-                  </Link>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+                  <a
+                    href="https://instagram.com/keenanbeasley"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="inline-flex h-11 w-11 items-center justify-center text-white/72 transition-colors hover:text-[#FF4628]"
+                  >
+                    <SocialIcon platform="instagram" size={24} />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/keenanbeasley"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="inline-flex h-11 w-11 items-center justify-center text-white/72 transition-colors hover:text-[#FF4628]"
+                  >
+                    <SocialIcon platform="linkedin" size={24} />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCBp9ngjP9cyPO6BsYT4GLtg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="inline-flex h-11 w-11 items-center justify-center text-white/72 transition-colors hover:text-[#FF4628]"
+                  >
+                    <SocialIcon platform="youtube" size={24} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/keenanbeasley97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="inline-flex h-11 w-11 items-center justify-center text-white/72 transition-colors hover:text-[#FF4628]"
+                  >
+                    <SocialIcon platform="facebook" size={24} />
+                  </a>
                 </div>
               </div>
             </CardContent>
