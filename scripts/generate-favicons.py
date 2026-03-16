@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageDraw
 except ImportError as exc:
     raise SystemExit(
         "Pillow is required to generate favicon assets. Install it before running this script."
@@ -22,6 +22,8 @@ ICON_SIZE = 512
 ICO_SIZES = [(16, 16), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)]
 APPLE_ICON_SIZE = 180
 BACKGROUND = (0, 0, 0, 255)
+BACKGROUND_INSET = 18
+BACKGROUND_RADIUS = 92
 K_CROP = (8, 8, 51, 49)
 B_CROP = (317, 9, 355, 49)
 K_HEIGHT = 228
@@ -47,7 +49,18 @@ def render_master_png() -> Image.Image:
     k = k.resize((k_width, K_HEIGHT), Image.Resampling.LANCZOS)
     b = b.resize((b_width, B_HEIGHT), Image.Resampling.LANCZOS)
 
-    canvas = Image.new("RGBA", (ICON_SIZE, ICON_SIZE), BACKGROUND)
+    canvas = Image.new("RGBA", (ICON_SIZE, ICON_SIZE), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(canvas)
+    draw.rounded_rectangle(
+        (
+            BACKGROUND_INSET,
+            BACKGROUND_INSET,
+            ICON_SIZE - BACKGROUND_INSET,
+            ICON_SIZE - BACKGROUND_INSET,
+        ),
+        radius=BACKGROUND_RADIUS,
+        fill=BACKGROUND,
+    )
     group_width = k.width + LETTER_SPACING + b.width
     start_x = (ICON_SIZE - group_width) // 2
 
