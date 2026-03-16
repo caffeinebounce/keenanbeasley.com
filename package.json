@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "generate:favicons": "python3 scripts/generate-favicons.py",
     "lint": "eslint"
   },
   "dependencies": {

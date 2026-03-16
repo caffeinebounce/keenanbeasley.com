@@ -25,27 +25,22 @@ export default function Footer() {
           title: "Explore",
           links: [
             { label: "About", href: "/about" },
-            { label: "Factory", href: "/factory" },
-            { label: "Portfolio", href: "/portfolio" },
+            { label: "Media", href: "/media" },
+            { label: "Speaking", href: "/speaking" },
           ],
         },
         {
           title: "Presence",
-          links: [
-            { label: "Media", href: "/media" },
-            { label: "Speaking", href: "/speaking" },
-            { label: "Contact", href: "/contact" },
-          ],
+          links: [{ label: "Contact", href: "/contact" }],
         },
       ]}
       copyright={`© ${new Date().getFullYear()} Keenan Beasley. All rights reserved.`}
-      containerClassName="max-w-6xl px-6 md:px-8"
       bottomContent={
         <a
-          href="mailto:contact@keenanbeasley.com"
+          href="mailto:info@keenanbeasley.com"
           className="text-sm text-white/55 hover:text-white"
         >
-          contact@keenanbeasley.com
+          info@keenanbeasley.com
         </a>
       }
       socialLinks={[
@@ -60,9 +55,14 @@ export default function Footer() {
           label: "LinkedIn",
         },
         {
-          icon: <SocialIcon platform="x" size={20} />,
-          href: "https://x.com/keenanbeasley",
-          label: "X",
+          icon: <SocialIcon platform="youtube" size={20} />,
+          href: "https://www.youtube.com/channel/UCBp9ngjP9cyPO6BsYT4GLtg",
+          label: "YouTube",
+        },
+        {
+          icon: <SocialIcon platform="facebook" size={20} />,
+          href: "https://www.facebook.com/keenanbeasley97",
+          label: "Facebook",
         },
       ]}
     />

@@ -53,8 +53,7 @@ const platformThesis = {
   ),
 };
 
-const heroActionBaseClassName =
-  "h-12 justify-center px-6 text-center text-sm font-medium uppercase tracking-[0.14em]";
+const heroActionBaseClassName = "h-12 justify-center px-6 text-center";
 
 export default function KeenanHero() {
   return (
@@ -88,24 +87,9 @@ export default function KeenanHero() {
         }
         actions={[
           {
-            label: "Explore Factory",
-            href: "/factory",
-            className:
-              `${heroActionBaseClassName} bg-[#FF4628] text-white hover:bg-[#d9563f]`,
-          },
-          {
-            label: "View Portfolio",
-            href: "/portfolio",
-            variant: "outline",
-            className:
-              `${heroActionBaseClassName} border-white/20 bg-white/[0.03] text-white hover:border-[#FF4628]/60 hover:bg-[#FF4628]/10 hover:text-white`,
-          },
-          {
-            label: "Start a Conversation",
+            label: "Get in Touch",
             href: "/contact",
-            variant: "outline",
-            className:
-              `${heroActionBaseClassName} border-white/20 bg-white/[0.03] text-white hover:border-[#FF4628]/60 hover:bg-[#FF4628]/10 hover:text-white`,
+            className: heroActionBaseClassName,
           },
         ]}
         signals={heroSignals}
@@ -115,13 +99,31 @@ export default function KeenanHero() {
           width: 1500,
           height: 625,
           focalPoint: { x: 0.7, y: 0.42 },
+          pixelatedCanvas: true,
+          pixelatedCanvasProps: {
+            backgroundColor: "transparent",
+            cellSize: 3,
+            distortionRadius: 72,
+            distortionStrength: 1.35,
+            dotScale: 0.96,
+            dropoutStrength: 0.08,
+            fadeSpeed: 0.16,
+            followSpeed: 0.16,
+            interactive: true,
+            jitterSpeed: 2.2,
+            jitterStrength: 1,
+            maxFps: 40,
+            sampleAverage: true,
+            shape: "square",
+            tintStrength: 0,
+          },
           badge: "Founder of Factory",
           callout: platformThesis,
         }}
-        mediaClassName="site-card-static p-0"
-        signalCardClassName="site-card-static"
-        mediaBadgeClassName="hidden md:block rounded-md border border-white/12 bg-black/45 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-white/80 backdrop-blur"
-        mediaCalloutClassName="border-white/10 bg-black/48 backdrop-blur-md"
+        mediaClassName="site-card-static p-0 !shadow-none !backdrop-blur-none"
+        signalCardClassName="site-card-static !shadow-none !backdrop-blur-none"
+        mediaBadgeClassName="hidden md:block rounded-box border border-white/12 bg-black/45 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-white/80 shadow-none !backdrop-blur-none"
+        mediaCalloutClassName="border-white/10 bg-black/48 !shadow-none !backdrop-blur-none"
       />
     </section>
   );
