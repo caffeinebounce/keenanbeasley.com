@@ -34,11 +34,11 @@ export default function Navbar() {
         <Button
           asChild
           variant="outline"
-          className="hidden md:inline-flex"
+          className="inline-flex h-9 shrink-0 px-3 text-[0.72rem] md:h-10 md:px-4"
         >
           <Link href="/contact">
             Connect
-            <ArrowUpRight className="h-3.5 w-3.5" />
+            <ArrowUpRight className="hidden h-3.5 w-3.5 md:block" />
           </Link>
         </Button>
       }
